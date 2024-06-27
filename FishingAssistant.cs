@@ -59,7 +59,7 @@ namespace FishingAssistant
                     {
                         using (var sessionControl = session.QueryInterface<AudioSessionControl2>())
                         {
-                            if (sessionControl.Process.ProcessName == "Wow")
+                            if (sessionControl.Process.ProcessName == "Wow" || sessionControl.Process.ProcessName == "WowClassic")
                             {
                                 Console.WriteLine("魔兽音频已找到");
                                 return session;
