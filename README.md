@@ -10,26 +10,25 @@
 
 ![image](https://github.com/lzxstruts/FishingAssistant/assets/129748020/65fae8b3-8bf0-43f3-8029-b01943ec14f0)
 
+按"1"抛竿  
+
+按"F"收杆
+
+
 
 wlk怀旧服相关说明
-![image](https://github.com/lzxstruts/FishingAssistant/assets/129748020/dfafb804-6272-474a-8b20-856c42ae6734)
+
 
 由于怀旧服钓鱼抛竿有时候会很远
 与目标互动可能与鱼漂互动不到
 
+![image](https://github.com/lzxstruts/FishingAssistant/assets/129748020/dfafb804-6272-474a-8b20-856c42ae6734)
+
 推荐找个可控制距离的钓点
 例如达拉然喷泉
 代码中加入多次抛竿 
-SendKey(dhwnd, 49);
-await Task.Delay(10);
-SendKey(dhwnd, 49);
-await Task.Delay(10);
-SendKey(dhwnd, 49);
-await Task.Delay(10);
-SendKey(dhwnd, 49);
-await Task.Delay(10);
-SendKey(dhwnd, 49);
 
 钓鱼使用宏
+
 /cast [nochanneling]钓鱼
 
