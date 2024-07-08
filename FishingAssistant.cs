@@ -155,41 +155,56 @@ namespace FishingAssistant
                 // 当音量大于设定值时执行
                 if (peakPercentage > volume && currentState == 1)
                 {
+                    currentState = 0;
+                    count = 0;
                     Console.WriteLine("检测到有鱼" + peakPercentage);
                     SendKey(dhwnd, 70);
                     await Task.Delay(1300);
-                    currentState = 0;
-                    count = 0;
                 }
                 if (currentState == 0)
                 {
                     currentState = 1;
                     count = 0;
-                    SendKey(dhwnd, 49);
-                    await Task.Delay(10);
-                    SendKey(dhwnd, 49);
-                    await Task.Delay(10);
-                    SendKey(dhwnd, 49);
-                    await Task.Delay(10);
-                    SendKey(dhwnd, 49);
-                    await Task.Delay(10);
-                    SendKey(dhwnd, 49);
+                    await casting();
                     Console.WriteLine("发送钓鱼按键");
                     await Task.Delay(3000);
                  
                 }
-                if (count>=160)
+                if (count>=150)
                 {
-                    SendKey(dhwnd, 49);
-                    Console.WriteLine("没上钩 重新发送钓鱼按键");
-                    await Task.Delay(3000);
                     currentState = 1;
                     count = 0;
+                    await casting();
+                    Console.WriteLine("没上钩 重新发送钓鱼按键");
+                    await Task.Delay(3000);
                 }
 
                 count++;
                 await Task.Delay(100);
             }
+        }
+
+        private async Task casting()
+        {
+            SendKey(dhwnd, 49);
+            await Task.Delay(90);
+            SendKey(dhwnd, 49);
+            await Task.Delay(20);
+            SendKey(dhwnd, 49);
+            await Task.Delay(30);
+            SendKey(dhwnd, 49);
+            await Task.Delay(40);
+            SendKey(dhwnd, 49);
+            await Task.Delay(40);
+            SendKey(dhwnd, 49);
+            await Task.Delay(10);
+            SendKey(dhwnd, 49);
+            await Task.Delay(10);
+            SendKey(dhwnd, 49);
+            await Task.Delay(10);
+            SendKey(dhwnd, 49);
+            await Task.Delay(10);
+            SendKey(dhwnd, 49);
         }
 
 
